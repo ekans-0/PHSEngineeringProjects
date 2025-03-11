@@ -1,9 +1,22 @@
-# gyroaccel.py
 import smbus2
+import csv
+import time
 
 # MPU6050 I2C address and register setup
 MPU6050_ADDRESS = 0x68
 bus = smbus2.SMBus(1)
+
+# CSV file path
+csv_file = 'gyroaccel_data.csv'
+
+# Check if the CSV file exists and write headers if necessary
+try:
+    with open(csv_file, mode='x', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Timestamp', 'Accel_X', 'Accel_Y', 'Accel_Z', 'Gyro_X', 'Gyro_Y', 'Gyro_Z'])
+except FileExistsError:
+    # If the file already exists, don't write headers again
+    pass
 
 # Initialize the MPU6050
 def initialize_gyroaccel():
@@ -26,9 +39,21 @@ def read_gyroaccel():
     gyro_y = read_word(0x45)
     gyro_z = read_word(0x47)
 
+    # Get the timestamp
+    timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+
     # Print the data
+    print(f"Timestamp: {timestamp}")
     print(f"Accelerometer -> X: {accel_x}, Y: {accel_y}, Z: {accel_z}")
     print(f"Gyroscope -> X: {gyro_x}, Y: {gyro_y}, Z: {gyro_z}")
 
+    # Write data to the CSV file (append mode)
+    with open(csv_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([timestamp, accel_x, accel_y, accel_z, gyro_x, gyro_y, gyro_z])
+
 # Call this function to initialize the MPU6050 sensor
 initialize_gyroaccel()
+
+# Run the function once to read the sensor and log data
+read_gyroaccel()
