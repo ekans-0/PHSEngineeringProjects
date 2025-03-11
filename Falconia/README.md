@@ -49,12 +49,11 @@ This data will help researchers understand volcanic processes, internal heating,
 ## 📂 Repository Structure
 ```
 Falconia/
-├── camera.py          # Camera control for image capture
-├── controlpanel.py    # Main control interface for the rover
-├── electro.py         # Electrical system integration
+├── camera.py         # Camera control for image capture
+├── controlpanel.py   # Main control interface for the rover
+├── electro.py        # Hall sensor integration for magnetic field detection
 ├── gas.py            # Gas sensor data collection
 ├── gyroaccel.py      # Gyroscope & accelerometer control
-├── hall_sensor.py    # Hall sensor integration for magnetic field detection
 ├── humiture.py       # Humidity and temperature sensor
 ├── motor.py          # Motor control and movement logic
 ├── sensor.py         # General sensor integration
