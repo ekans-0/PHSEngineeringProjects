@@ -1,0 +1,13 @@
+numpy
+opencv-python
+RPi.GPIO
+smbus
+adafruit-circuitpython-bme280
+adafruit-circuitpython-mpu6050
+adafruit-circuitpython-sgp30
+pyserial
+picamera2
+board
+curses
+cv2
+
