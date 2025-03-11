@@ -8,9 +8,7 @@ Currently I have only worked on two projects.
 
 ***2. FalconWing***
   * This was a team-based project where we were tasked to engineer, sense, and develop a prosthetic that would mimic the action of a hand opening/closing using MyoWare, an EMG-sensing device that was coded and powered by an Arduino and C++. 
-<<<<<<< HEAD
-=======
 
 ***3. Mission Possible***
   * This was a team-based project where we were tasked to engineer, sense, traverse, and excavate a simulated extraterrestrial planet that would mimic the Curiosity or Perserverance, using a suite of sensors, Raspberry Pi, and a lego chassis. 
->>>>>>> a22f2e33bfd5fa70c01dd4bc9f6a8908adf566c2
+
