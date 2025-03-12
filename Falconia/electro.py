@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(HALL_SENSOR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # CSV file path
-csv_file = 'hall_sensor_data.csv'
+csv_file = 'Data/hall_sensor_data.csv'
 
 # Check if the CSV file exists and write headers if necessary
 try:
