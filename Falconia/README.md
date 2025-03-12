@@ -58,6 +58,7 @@ Falconia/
 ├── motor.py          # Motor control and movement logic
 ├── sensor.py         # General sensor integration
 ├── README.md         # Project documentation
+├── Data/             # Project data, collected into CSV files, stored seperately
 └── __pycache__/      # Cached Python files
 ```
 
