@@ -1,4 +1,4 @@
-Timestamp,Accel_X,Accel_Y,Accel_Z,Gyro_X,Gyro_Y,Gyro_Z
+Timestamp (GMT),Accel_X,Accel_Y,Accel_Z,Gyro_X,Gyro_Y,Gyro_Z
 2025-03-11 16:11:58,-8832,-2796,12916,-236,132,-81
 2025-03-11 16:18:59,-8652,-2740,12764,-230,138,-81
 2025-03-11 16:19:03,-8804,-2768,12796,-226,132,-76
