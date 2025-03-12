@@ -7,7 +7,7 @@ import time
 DHT_SENSOR = adafruit_dht.DHT11(board.D17)
 
 # CSV file path
-csv_file = 'humiture_data.csv'
+csv_file = 'Data/humiture_data.csv'
 
 # Check if the CSV file exists and write headers if necessary
 try:
