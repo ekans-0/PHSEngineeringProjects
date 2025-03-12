@@ -86,5 +86,6 @@ Falconia/
 - Improve **obstacle detection accuracy**
 - Optimize **power efficiency** for extended missions
 - Expand sensor suite for additional environmental monitoring
+- Completely autonomize the rover for **complete** control **hands-off**, with __adaptive sensor detection__
 
 
