@@ -10,7 +10,7 @@ GAS_SENSOR_PIN = 26
 GPIO.setup(GAS_SENSOR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Ensure the pin is set up correctly
 
 # CSV file path
-csv_file = 'gas_sensor_data.csv'  # Ensure the file path points to "Data Collection"
+csv_file = 'Data/gas_sensor_data.csv'  # Ensure the file path points to "Data Collection"
 
 # Check if the CSV file exists and write headers if necessary
 try:
