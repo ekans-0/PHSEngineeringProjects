@@ -7,7 +7,7 @@ MPU6050_ADDRESS = 0x68
 bus = smbus2.SMBus(1)
 
 # CSV file path
-csv_file = 'gyroaccel_data.csv'
+csv_file = 'Data/gyroaccel_data.csv'
 
 # Check if the CSV file exists and write headers if necessary
 try:
