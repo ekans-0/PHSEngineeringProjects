@@ -2,6 +2,7 @@ import time
 import curses
 import signal
 import sys
+import RPi.GPIO as GPIO  # Import GPIO here for cleanup
 import humiture
 import electro
 import gas
@@ -35,41 +36,37 @@ def main(stdscr):
             stdscr.clear()
             stdscr.addstr(0, 0, "Running Humiture test (DHT sensor) for 15 seconds...")
             stdscr.refresh()
-
             start_time = time.time()
             while time.time() - start_time < 15:  # Run for 15 seconds
                 humiture.read_humiture()  # Run Humiture sensor
-                time.sleep(1)  # Wait for 1 second between readings (to avoid overwhelming the terminal)
+                time.sleep(1)  # Wait for 1 second between readings
 
         elif key == ord('e'):
             stdscr.clear()
             stdscr.addstr(0, 0, "Running Hall sensor test for 15 seconds...")
             stdscr.refresh()
-
             start_time = time.time()
             while time.time() - start_time < 15:  # Run for 15 seconds
                 electro.read_hall_sensor()  # Run Hall sensor
-                time.sleep(1)  # Wait for 1 second between readings (to avoid overwhelming the terminal)
+                time.sleep(1)  # Wait for 1 second between readings
 
         elif key == ord('g'):
             stdscr.clear()
             stdscr.addstr(0, 0, "Running Gas sensor test for 15 seconds...")
             stdscr.refresh()
-
             start_time = time.time()
             while time.time() - start_time < 15:  # Run for 15 seconds
                 gas.read_gas_sensor()  # Run Gas sensor
-                time.sleep(1)  # Wait for 1 second between readings (to avoid overwhelming the terminal)
+                time.sleep(1)  # Wait for 1 second between readings
 
         elif key == ord('a'):  # For the Gyroscope/Accelerometer
             stdscr.clear()
             stdscr.addstr(0, 0, "Running Gyroscope/Accelerometer test for 15 seconds...")
             stdscr.refresh()
-
             start_time = time.time()
             while time.time() - start_time < 15:  # Run for 15 seconds
                 gyroaccel.read_gyroaccel()  # Run Gyroscope/Accelerometer
-                time.sleep(1)  # Wait for 1 second between readings (to avoid overwhelming the terminal)
+                time.sleep(1)  # Wait for 1 second between readings
 
         elif key == ord('q'):
             break  # Exit the loop if 'q' is pressed
