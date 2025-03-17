@@ -17,7 +17,7 @@ def stop_motors():
 
 # Function to move forward
 def move_forward():
-    kit.motor1.throttle = 0.75  # Speed (0.0 - 1.0)
+    kit.motor1.throttle = 0.75
     kit.motor4.throttle = 0.75
 
 # Function to move backward
@@ -35,13 +35,43 @@ def turn_right():
     kit.motor1.throttle = 1
     kit.motor4.throttle = 0
 
+# Function to move diagonally forward-left
+def move_diagonal_forward_left():
+    kit.motor1.throttle = 0.1
+    kit.motor4.throttle = 0.75
+
+# Function to move diagonally forward-right
+def move_diagonal_forward_right():
+    kit.motor1.throttle = 0.75
+    kit.motor4.throttle = 0.1
+
+# Function to move diagonally backward-left
+def move_diagonal_backward_left():
+    kit.motor1.throttle = -0.1
+    kit.motor4.throttle = -0.75
+
+# Function to move diagonally backward-right
+def move_diagonal_backward_right():
+    kit.motor1.throttle = -0.75
+    kit.motor4.throttle = -0.1
+
+# Function to spin left
+def spin_left():
+    kit.motor1.throttle = -0.75
+    kit.motor4.throttle = 0.75
+
+# Function to spin right
+def spin_right():
+    kit.motor1.throttle = 0.75
+    kit.motor4.throttle = -0.75
+
 def main(stdscr):
     # Set up curses
     curses.curs_set(0)  # Hide the cursor
     stdscr.nodelay(1)   # Non-blocking input
     stdscr.timeout(100)  # Refresh timeout
 
-    stdscr.addstr(0, 0, "Use WASD to control the motors:")
+    stdscr.addstr(0, 0, "Use WASD for movement, QEZX for diagonals, JL for spin turns:")
     stdscr.refresh()
 
     try:
@@ -67,6 +97,36 @@ def main(stdscr):
                 stdscr.clear()
                 stdscr.addstr(0, 0, "Turning right")
                 turn_right()
+
+            elif key == ord('q'):  # Diagonal forward-left
+                stdscr.clear()
+                stdscr.addstr(0, 0, "Moving diagonally forward-left")
+                move_diagonal_forward_left()
+
+            elif key == ord('e'):  # Diagonal forward-right
+                stdscr.clear()
+                stdscr.addstr(0, 0, "Moving diagonally forward-right")
+                move_diagonal_forward_right()
+
+            elif key == ord('z'):  # Diagonal backward-left
+                stdscr.clear()
+                stdscr.addstr(0, 0, "Moving diagonally backward-left")
+                move_diagonal_backward_left()
+
+            elif key == ord('c'):  # Diagonal backward-right
+                stdscr.clear()
+                stdscr.addstr(0, 0, "Moving diagonally backward-right")
+                move_diagonal_backward_right()
+
+            elif key == ord('j'):  # Spin left
+                stdscr.clear()
+                stdscr.addstr(0, 0, "Spinning left")
+                spin_left()
+
+            elif key == ord('l'):  # Spin right
+                stdscr.clear()
+                stdscr.addstr(0, 0, "Spinning right")
+                spin_right()
 
             else:  # If no key is pressed, stop motors
                 stop_motors()
